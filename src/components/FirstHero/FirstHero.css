@@ -1,0 +1,17 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 26px 0;
+}
+.hero-img {
+  width: 75%;
+}
+.experiences {
+  width: 360px;
+  padding-left: 170px;
+}
+.experiences > h3 {
+  font-size: 36px;
+  margin: 0;
+}
