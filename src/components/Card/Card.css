@@ -1,0 +1,19 @@
+.card {
+  line-height: 1;
+  width: 176px;
+}
+.person-img {
+  border-radius: 9px;
+  width: 176px;
+}
+.rating {
+  display: flex;
+  align-items: center;
+}
+.gray-text {
+  color: gray;
+}
+
+.text-bold {
+  font-weight: 700;
+}
