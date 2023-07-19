@@ -1,21 +1,22 @@
 import React from "react";
-import Person from "./katie-zaferes.png";
-import star from "./star.png";
 import "./Card.css";
 
-const Card = () => {
+const Card = ({ img, rating, reviewCount, country, title, price }) => {
   return (
     <div className="card">
-      <img src={Person} alt="" className="person-img" />
+      <img src={img} alt="" className="person-img" />
       <div className="rating">
-        <img src={star} alt="" width={14} height={14} />
+        <img src={rating} alt="" width={14} height={14} />
         <p>
-          5.0 <span className="gray-text">(6) . USA</span>
+          5.0{" "}
+          <span className="gray-text">
+            ({reviewCount}) . {country}
+          </span>
         </p>
       </div>
-      <p className="lesson">Life lessons with Katie Zaferes</p>
+      <p className="lesson">{title}</p>
       <p>
-        <span className="text-bold">From $136</span> / person
+        <span className="text-bold">From ${price}</span> / person
       </p>
     </div>
   );
