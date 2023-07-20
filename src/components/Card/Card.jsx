@@ -1,25 +1,24 @@
 import React from "react";
-import "./Card.css";
 
-const Card = ({ img, rating, reviewCount, country, title, price }) => {
+export default function Card(props) {
   return (
     <div className="card">
-      <img src={img} alt="" className="person-img" />
-      <div className="rating">
-        <img src={rating} alt="" width={14} height={14} />
-        <p>
-          5.0{" "}
-          <span className="gray-text">
-            ({reviewCount}) . {country}
-          </span>
-        </p>
+      {/* <img src={`../images/${props.img}`} className="card--image" alt="" /> */}
+      <img
+        src={`../../../public/images/${props.img}`}
+        className="card--image"
+        alt=""
+      />
+      <div className="card--stats">
+        <img src="../images/star.png" className="card--star" alt="" />
+        <span>{props.rating}</span>
+        <span className="gray">({props.reviewCount}) • </span>
+        <span className="gray">{props.location}</span>
       </div>
-      <p className="lesson">{title}</p>
+      <p>{props.title}</p>
       <p>
-        <span className="text-bold">From ${price}</span> / person
+        <span className="bold">From ${props.price}</span> / person
       </p>
     </div>
   );
-};
-
-export default Card;
+}

@@ -9,46 +9,27 @@ import img3 from "./components/Contact/images/fluffykins.png";
 import img4 from "./components/Contact/images/pumpkin.png";
 import img5 from "./components/Card/katie-zaferes.png";
 import rating from "./components/Card/star.png";
+import data from "./data";
+console.log(data);
 
 function App() {
+  const cards = data.map((item) => {
+    return (
+      <Card
+        key={item.id}
+        img={item.coverImg}
+        rating={item.stats.rating}
+        reviewCount={item.stats.reviewCount}
+        location={item.location}
+        title={item.title}
+        price={item.price}
+      />
+    );
+  });
   return (
     <div className="">
       <Navbar />
-      <FirstHero />
-      <Card
-        img={img5}
-        rating={rating}
-        country={"USA"}
-        price={195}
-        reviewCount={234}
-        title={"Life Lessons with Katie Zafere"}
-      />
-      <div className="contacts">
-        <Contact
-          img={img1}
-          name={"Mr. Whiskerson"}
-          phone="(212) 555-1234"
-          email="mr.whiskaz@catnap.meow"
-        />
-        <Contact
-          img={img2}
-          name={"felix"}
-          phone="(212) 555-2345"
-          email="fluff@me.com"
-        />
-        <Contact
-          img={img3}
-          name={"fluffykins"}
-          phone="(212) 555-4567"
-          email="thecat@hotmail.com"
-        />
-        <Contact
-          img={img4}
-          name={"pumpkin"}
-          phone="(0800)"
-          email="pumpkin@scrimba.com"
-        />
-      </div>
+      {cards}
     </div>
   );
 }
